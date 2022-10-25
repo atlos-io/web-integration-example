@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>ATLOS Web Integration Example</title>
+    </head>
+    <body>
+        <h1>ATLOS Web Integration Example</h1>
+
+        <!-- Note that the widget will not be able to connect to a wallet if ran locally -->
+        <a href="#" onclick="atlos.Pay('merchant_id', 'order_id', 1000.00, handleSuccess, handleCanceled); return false;">Make a Payment</a>
+
+        <!-- ATLOS widget code begin -->
+        <script defer src="https://atlos.io/packages/app/1.0.1/atlos.js"></script>
+
+        <script type="text/javascript">
+            function handleSuccess() {
+                alert('Payment successful');
+            }
+
+            function handleCanceled() {
+                alert('Payment canceled');
+            }
+        </script>
+        <!-- ATLOS widget code end -->
+    </body>
+</html>
